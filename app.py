@@ -12,13 +12,13 @@ def get_weather(city):
     return data
 
 # Streamlit app
-st.title("Weather App")
+st.title("Weather App")   #This line creates a button labeled "Get Weather" 
 
 # Input for city name
-city = st.text_input("Enter City Name")
+city = st.text_input("Enter City Name")  #this line get city name from user
 
 # Button to get weather
-if st.button("Get Weather"):
+if st.button("Get Weather"):                   #This line calls a function named get_weather and passes the city variable as an argument
     weather_data = get_weather(city)
     if weather_data["cod"] == 200:
         st.write(f"Weather in {city}: {weather_data['weather'][0]['description']}")
